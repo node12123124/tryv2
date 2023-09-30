@@ -10,6 +10,10 @@ curr_dir = os.path.dirname(os.path.abspath(__file__))
 problems_dir = os.path.join(curr_dir,"problems/")
 solutions_dir = "solution/"
 # Send an API request and get a response.
+if not os.path.exists(problems_dir):
+    os.makedirs(problems_dir)
+if not os.path.exists(solutions_dir):
+    os.makedirs(solutions_dir)
 
 @app.route('/solve', methods=['GET'])
 def solve_problem():
